@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="bootstrap.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>LED-Controller</title>
 </head>
+<header>
+  <p class="h1 text-center text-dark">LED-Controller</p>
+</header>
+
 <body>
-    
+  <div class="main" id="range">
+    <div id="red">
+      <label for="redRange" class="form-label" id="redLabel">Rot</label>
+        <input type="range" min="0" max="255" class="form-range" id="redRange">
+        <div class="progressBar" id="redProgressBar"></div>
+    </div>
+    <div id="green">
+      <label for="greenRange" class="form-label" id="greenLabel">Grün</label>
+        <input type="range" min="0" max="255" class="form-range" id="greenRange">
+        <div class="progressBar" id="greenProgressBar"></div>
+    </div>
+    <div id="blue">
+      <label for="blueRange" class="form-label" id="blueLabel">Blau</label>
+        <input type="range" min="0" max="255" class="form-range" id="blueRange">
+        <div class="progressBar" id="blueProgressBar"></div>
+    </div>
+    <div id="colorOut">
+      <label for="colorDraw" class="form-label" id="colorLabel">Farbausgabe:</label>
+      <div id="colorDraw"></div>
+    </div>
+  </div>
+
+  
+
+
+  <script>
+    var redProgressBar = document.getElementById("redProgressBar");
+    var redRange = document.getElementById("redRange");
+    var greenProgressBar = document.getElementById("greenProgressBar");
+    var greenRange = document.getElementById("greenRange");
+    var blueProgressBar = document.getElementById("blueProgressBar");
+    var blueRange = document.getElementById("blueRange");
+    var colorDraw = document.getElementById("colorDraw");
+    var redColor = redRange.value;
+    var greenColor = greenRange.value;
+    var blueColor = blueRange.value;
+
+    colorWrite();
+    redRange.oninput = function () {
+      redProgressBar.style.width = ((this.value / 255) * 100) + "%";
+      redColor = this.value;
+      colorWrite();
+    }
+    greenRange.oninput = function () {
+      greenProgressBar.style.width = ((this.value / 255) * 100) + "%";
+      greenColor = this.value;
+      colorWrite();
+    }
+    blueRange.oninput = function () {
+      blueProgressBar.style.width = ((this.value / 255) * 100) + "%";
+      blueColor = this.value;
+      colorWrite();
+    }
+
+    function colorWrite() {
+      colorDraw.style.backgroundColor = "rgb(" + redColor + "," + greenColor + "," + blueColor + ")";
+    }
+  </script>
 </body>
+
 </html>
