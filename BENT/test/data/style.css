@@ -1,0 +1,82 @@
+
+
+body{
+    background-color: #eeeeee
+}
+.main{
+    width: 70%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-label{
+    font-weight: bold;
+}
+.form-range::-webkit-slider-thumb {
+    width: 2rem;
+    height: 2rem;
+    margin-top: -0.8rem;
+    
+}
+.form-range::-webkit-slider-runnable-track {
+    height: 0.4rem;
+    
+}
+.progressBar{
+    width: 50%;
+    height: 0.4rem;
+    color: transparent;
+    cursor: pointer;
+    border-color: transparent;
+    border-radius: 1rem;
+    position: absolute;
+    margin-top: -1.3rem;
+    left: 0;
+}
+
+#redRange::-webkit-slider-thumb {
+    background-color: red;
+}
+#greenRange::-webkit-slider-thumb {
+    background-color: green;
+}
+#blueRange::-webkit-slider-thumb {
+    background-color: blue;
+}
+#redProgressBar{
+    background-color: red;
+}
+#greenProgressBar{
+    background-color: green;
+}
+#blueProgressBar{
+    background-color: blue;
+}
+#redLabel{
+    color: red;
+}
+#greenLabel{
+    color: green;
+}
+#blueLabel{
+    color: blue;
+}
+#colorDraw{
+    
+    height: 4rem;
+    width: 50%;
+    position: relative;
+    margin: auto;
+    margin-top: -2rem;
+    border-radius: 10px;
+    border-color: black;
+    border: 2px solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+#colorLabel{
+    margin-top: 2rem;
+}
